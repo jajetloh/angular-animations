@@ -1,12 +1,19 @@
 <div style="display: flex; align-items: center; width: 100%; flex-direction: column">
-    <div *ngFor="let t of textList; let i = index">
-<!--        <span *ngIf="i === currentTextIndex" [@toggleText]="goingForward">{{ t }}</span>-->
-        <app-animated [show]="i === currentTextIndex">
-            {{ t }}
-        </app-animated>
+    <div style="height: 100px; width: 100%; position: relative; display: flex; align-items: center; flex-direction: column">
+        <div *ngFor="let t of textList; let i = index">
+            <!--        <span *ngIf="i === currentTextIndex" [@toggleText]="goingForward">{{ t }}</span>-->
+            <app-animated [show]="i === currentTextIndex" [direction]="goingForward">
+                {{ t }}
+            </app-animated>
+        </div>
     </div>
     <div>
         <button (click)="toggleText(false)">Previous</button>
         <button (click)="toggleText(true)">Next</button>
     </div>
+    <div style="position: relative; width: 100%">
+        <div style="position: absolute; top: 0">Test thingo</div>
+        <div style="position: absolute; top: 0">-----------------</div>
+    </div>
 </div>
+

@@ -1,3 +1,5 @@
-<div *ngIf="show" class="animated-content" [@state]="state" (@state.done)="animationDone($event)">
-    <ng-content #content></ng-content>
+<div *ngIf="show" [@state]="state + '_' + direction" (@state.done)="animationDone($event)">
+    <div style="width: 246px; display: flex; justify-content: center">
+        <ng-content></ng-content>
+    </div>
 </div>
