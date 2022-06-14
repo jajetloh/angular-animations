@@ -1,0 +1,3 @@
+<div *ngIf="show" class="animated-content" [@state]="state" (@state.done)="animationDone($event)">
+    <ng-content #content></ng-content>
+</div>
