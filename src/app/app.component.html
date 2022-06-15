@@ -4,16 +4,13 @@
             <!--        <span *ngIf="i === currentTextIndex" [@toggleText]="goingForward">{{ t }}</span>-->
             <app-animated [show]="i === currentTextIndex" [direction]="goingForward">
                 {{ t }}
+                <input [placeholder]="t" type="text">
             </app-animated>
         </div>
     </div>
     <div>
         <button (click)="toggleText(false)">Previous</button>
         <button (click)="toggleText(true)">Next</button>
-    </div>
-    <div style="position: relative; width: 100%">
-        <div style="position: absolute; top: 0">Test thingo</div>
-        <div style="position: absolute; top: 0">-----------------</div>
     </div>
 </div>
 

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
 import { animate, style, transition, trigger } from "@angular/animations"
 
 // Based on: https://www.usefuldev.com/post/Angular:%20using%20animations%20with%20NgIf
@@ -13,18 +13,18 @@ export type AnimationDirection = 'forward' | 'backward'
     animations: [
         trigger('state', [
             transition('void => visible_forward', [
-                style({ opacity: 0, transform: 'translateX(100px)', position: 'absolute', top: 0 }),
+                style({ opacity: 0, transform: 'translateX(0px)', position: 'absolute', top: 0 }),
                 animate('400ms ease-out', style({ opacity: 1, transform: 'translateX(-123px)' })),
             ]),
             transition('void => visible_backward', [
-                style({ opacity: 0, transform: 'translateX(-346px)', position: 'absolute', top: 0 }),
+                style({ opacity: 0, transform: 'translateX(-246px)', position: 'absolute', top: 0 }),
                 animate('400ms ease-out', style({ opacity: 1, transform: 'translateX(-123px)' })),
             ]),
             transition('visible_forward => hidden_forward, visible_backward => hidden_forward', [
-                animate('400ms ease-out', style({ opacity: 0, transform: 'translateX(-223px)' })),
+                animate('400ms ease-out', style({ opacity: 0, transform: 'translateX(-123px)' })),
             ]),
             transition('visible_forward => hidden_backward, visible_backward => hidden_backward', [
-                animate('400ms ease-out', style({ opacity: 0, transform: 'translateX(223px)' })),
+                animate('400ms ease-out', style({ opacity: 0, transform: 'translateX(123px)' })),
             ]),
         ])
     ],
